@@ -19,10 +19,13 @@ export const Div = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 3vw;
+    overflow: auto;
+    flex-wrap: wrap;
 
     @media screen and (min-width: 768px) {
       width: 70%;
-      flex-direction: row;
+      height: 50%;
+      gap: 0.5vh;
     }
 
     li {

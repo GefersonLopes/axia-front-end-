@@ -2,22 +2,17 @@ import { ReactNode } from 'react';
 
 export interface GlobalInterfaceContext {
   navigate: (value: string) => void;
+  url: string;
+  news: Data[] | undefined;
+  setNews: (value: Data[]) => void;
 }
 
 export interface INode {
   children: ReactNode;
 }
 
-interface Address {
-  street: string;
-  number: string;
-}
-
-export interface Client {
-  _id?: string;
-  name: string;
-  email: string;
-  tel: string;
-  address: Address;
-  cpf: string;
+export interface Data {
+  title: string | undefined;
+  datatime: Date | undefined;
+  link: string | undefined;
 }
