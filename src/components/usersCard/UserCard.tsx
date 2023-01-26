@@ -1,15 +1,14 @@
 import { Div } from './styled';
 import { motion } from 'framer-motion';
 import socketIOClient from 'socket.io-client';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Data } from '../../interfaces/globalInterfaces';
 import moment from 'moment';
 import { Context } from '../../context/Context';
 
 export const UserCard = () => {
   const { news, setNews, url } = useContext(Context);
-
-  const socket = socketIOClient(url);
+  const socket = socketIOClient(url, { secure: true });
 
   useEffect(() => {
     socket.on('connect', () => {
